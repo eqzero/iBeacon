@@ -1,4 +1,4 @@
-console.log('iBeacon NodeJs running ....');
+console.log('iBeacon running ....');
 
 noble.startScanning();
  
