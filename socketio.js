@@ -1,9 +1,3 @@
-
-var io = require('socket.io')(http);
-
-
-
-io.on('connection', function(socket){
-  console.log('a user connected');
-});
-
+var io = require('socket.io')();
+io.on('connection', function(socket){});
+io.listen(3000);

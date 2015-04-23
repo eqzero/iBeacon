@@ -1,11 +1,13 @@
-console.log('iBeacon running ....');
+console.log('Nodejs running!!.......');
+var noble = require('noble');
 
-noble.startScanning();
+noble.startScanning(); // any service UUID, no duplicates 
  
-noble.on('discover', function(peripheral) { 
  
-  var macAddress = peripheral.uuid;
-  var rss = peripheral.rssi;
-  var localName = advertisement.localName; 
-  console.log('found device: ', macAdress, ' ', localName, ' ', rss);   
-});
+noble.startScanning([], true); // any service UUID, allow duplicates 
+ 
+ 
+var serviceUUIDs = ["<service UUID 1>"]; // default: [] => all 
+var allowDuplicates = false; // default: false 
+ 
+noble.startScanning(serviceUUIDs, allowDuplicates); // particular UUID's 
