@@ -2,10 +2,10 @@ console.log('Noble running!!.......');
 
 // var server = require('http').createServer();
 
-// var noble = require('noble');
+var noble = require('noble');
  
 // //replace localhost with your server's IP;
-// var socket = require('socket.io-client')('http://10.137.170.59/scanner');
+var socket = require('socket.io-client')('http://10.137.170.59/scanner');
  
 // //replace with your hardware address
 // // var addressToTrack = '7c669d9b2dda'; 
@@ -25,7 +25,7 @@ console.log('Noble running!!.......');
 
 // ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-// var express = require('express');
+var express = require('express');
 // var app = require('express')();
 // var http = require('http').Server(app);
 // var io = require('socket.io')(http);
