@@ -1,13 +1,7 @@
 console.log('Nodejs running!!.......');
-var noble = require('noble');
 
-noble.startScanning(); // any service UUID, no duplicates 
- 
- 
-noble.startScanning([], true); // any service UUID, allow duplicates 
- 
- 
-var serviceUUIDs = ["<service UUID 1>"]; // default: [] => all 
-var allowDuplicates = false; // default: false 
- 
-noble.startScanning(serviceUUIDs, allowDuplicates); // particular UUID's 
+var http = require('http');
+http.createServer(function (req, res) {
+  res.writeHead(200, {'Content-Type': 'text/plain'});
+  res.end('Hello World\n');
+}).listen(9999);
