@@ -1,7 +1,10 @@
 console.log('Socket io running....');
 
-var io = require('socket.io')();
-io.on('connection', function(socket){
-	console.log('connection');	
+var net = require('net');
+
+var server = net.createServer(function (socket) {
+  socket.write('Echo server\r\n');
+  socket.pipe(socket);
 });
-io.listen(3000);
+
+server.listen(9999);
