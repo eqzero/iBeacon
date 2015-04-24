@@ -1,7 +1,3 @@
-console.log('Nodejs running!!.......');
+console.log('Noble running!!.......');
 
-var http = require('http');
-http.createServer(function (req, res) {
-  res.writeHead(200, {'Content-Type': 'text/plain'});
-  res.end('Hello World\n');
-}).listen(9999);
+var noble = require('noble');
