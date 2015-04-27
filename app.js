@@ -48,33 +48,6 @@ http.listen(3000, function() {
     console.log('listening on *:3000');
 });
 
-$(document).ready(function() {
- 
-   var socket = io('http://localhost/client');
-   var linearScale = d3.scale.linear()
-        .domain([0, 20])
-        .range([20, 1000]);   
-        
-    socket.on('connected', function(msg) {
-        console.log('connected to server');
- 
-    });   
- 
-    socket.on('message', function(msg) {
-                
-        var yVal = filter(linearScale(msg.accuracy));
- 
-        TweenLite.to(user, 2, {
-            y: yVal,
-            ease: 'easeOutExpo'
-        });
- 
-    });
-    
-});
-
-
-
 
 
 
