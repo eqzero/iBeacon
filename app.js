@@ -3,11 +3,11 @@ console.log('Noble running!!.......');
 var noble = require('noble');
  
 //replace localhost with your server's IP;
-var socket = require('socket.io-client')('http://localhost/scanner');
+var socket = require('socket.io-client')('http://10.137.170.59/scanner');
  
 // replace with your hardware address
-var addressToTrack = '7c669d9b2dda'; 
-// var addressToTrack = '08:00:27:60:70:62'; 
+// var addressToTrack = '7c669d9b2dda'; 
+var addressToTrack = '08:00:27:60:70:62'; 
  
 socket.on('connect', function(){  
   console.log('connected to server');
