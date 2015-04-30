@@ -6,8 +6,8 @@ var noble = require('noble');
 var socket = require('socket.io-client')('http://localhost/scanner');
  
 // replace with your hardware address
-// var addressToTrack = '7c669d9b2dda'; 
-var addressToTrack = '08:00:27:60:70:62'; 
+var addressToTrack = '7c669d9b2dda'; 
+// var addressToTrack = '08:00:27:60:70:62'; 
  
 socket.on('connect', function(){  
   console.log('connected to server');
@@ -47,11 +47,3 @@ scanner.on('connection', function(socket) {
 http.listen(3000, function() {
     console.log('listening on *:3000');
 });
-
-
-
-
-
-
-
-// JOEI
