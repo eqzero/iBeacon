@@ -53,20 +53,21 @@ noble.on('discover', function(peripheral) {
       console.log(peripheral.address);
 
       var manufacturerData = peripheral.advertisement.manufacturerData.toString('hex');
-      var txPower = parseInt(manufacturerData.substring(manufacturerData.length-2), 16)-256;
-      // var rssi_new = calculateDistance(txPower,peripheral.rssi);
+      // var txPower = parseInt(manufacturerData.substring(manufacturerData.length-2), 16)-256;
+      var txPower = serviceData[0].data.readInt8(6);
+      var rssi_new = calculateDistance(txPower,peripheral.rssi);
 
       // console.log("address: "+peripheral.address,"txPower: "+txPower,"rssi: "+peripheral.rssi,"rssi_new: "+rssi_new);
 
       // console.log("serviceData.readInt8(6): "+serviceData.readInt8(6),"txPower: "+txPower);
-      console.log("localName: "+peripheral.advertisement.localName,"readInt8: "+serviceData[0].data.readInt8(6),"txPower: "+txPower);
+      console.log("localName: "+peripheral.advertisement.localName,,"txPower: "+txPower);
     
-      var manufacturerData2 = peripheral.advertisement.manufacturerData;
+      // var manufacturerData2 = peripheral.advertisement.manufacturerData;
 
-      if(manufacturerData2.length >= 18){
+      // if(manufacturerData2.length >= 18){
 
-        console.log( manufacturerData2.readInt8(16) * 16 * 0.976,manufacturerData2.readInt8(17) * 16 * 0.976,manufacturerData2.readInt8(18) * 16 * 0.976);    
-      }
+      //   console.log( manufacturerData2.readInt8(16) * 16 * 0.976,manufacturerData2.readInt8(17) * 16 * 0.976,manufacturerData2.readInt8(18) * 16 * 0.976);    
+      // }
 
       console.log("===============================>");      
 
