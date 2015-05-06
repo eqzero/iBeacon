@@ -42,24 +42,24 @@ noble.on('discover', function(peripheral) {
   // console.log(peripheral.advertisement.serviceData);
   // console.log(peripheral.advertisement.txPowerLevel);
 
-  // setInterval(function(){
+  setInterval(function(){
 
-  //   var rssi_new = calculateDistance(peripheral.advertisement.txPowerLevel,peripheral.rssi);
+    var rssi_new = calculateDistance(peripheral.rssi);
 
-  //   console.log("address: "+peripheral.address,"txPowerLevel: "+peripheral.advertisement.txPowerLevel,"rssi: "+peripheral.rssi,"rssi_new: "+rssi_new);
+    console.log("address: "+peripheral.address,"rssi: "+peripheral.rssi,"rssi_new: "+rssi_new);
 
-  // }, 2000);
+  }, 2000);
 
 
-  console.log(peripheral.advertisement.manufacturerData);
-  console.log(JSON.stringify(peripheral.advertisement.manufacturerData.toString('hex')));
+  // console.log(peripheral.advertisement.manufacturerData);
+  // console.log(JSON.stringify(peripheral.advertisement.manufacturerData.toString('hex')));
 
   console.log('<-------------->');
 });
 
-function calculateDistance(txPower,rssi) {
+function calculateDistance(rssi) {
   
-  // var txPower = -59 //hard coded power value. Usually ranges between -59 to -65
+  var txPower = 175 //hard coded power value. Usually ranges between -59 to -65
   
   if (rssi == 0) {
     return -1.0; 
