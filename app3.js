@@ -44,17 +44,17 @@ noble.on('discover', function(peripheral) {
 
 
   setInterval(function(){
-    console.log("Loding...");
-    var serviceData = peripheral.advertisement.serviceData;
+    // console.log("Loding...");
+    // var serviceData = peripheral.advertisement.serviceData;
 
-    if(serviceData.length > 0){
+    // if(serviceData.length > 0){
 
 
       console.log(peripheral.address);
 
       var manufacturerData = peripheral.advertisement.manufacturerData.toString('hex');
-      // var txPower = parseInt(manufacturerData.substring(manufacturerData.length-2), 16)-256;
-      var txPower = serviceData[0].data.readInt8(6);
+      var txPower = parseInt(manufacturerData.substring(manufacturerData.length-2), 16)-256;
+      // var txPower = serviceData[0].data.readInt8(6);
       var rssi_new = calculateDistance(txPower,peripheral.rssi);
 
       // console.log("address: "+peripheral.address,"txPower: "+txPower,"rssi: "+peripheral.rssi,"rssi_new: "+rssi_new);
@@ -69,10 +69,10 @@ noble.on('discover', function(peripheral) {
       //   console.log( manufacturerData2.readInt8(16) * 16 * 0.976,manufacturerData2.readInt8(17) * 16 * 0.976,manufacturerData2.readInt8(18) * 16 * 0.976);    
       // }
 
-      console.log("===============================>");      
+      // console.log("===============================>");      
 
-    }
-  }, 2000);
+    // }
+  }, 1000);
 
 
   // console.log(peripheral.advertisement.manufacturerData);
