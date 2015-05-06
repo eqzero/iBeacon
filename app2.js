@@ -17,13 +17,11 @@ noble.on('discover', function(peripheral) {
 	}); 
  
 	peripheral.on('rssiUpdate',function(rssi){
-		if(rssi_ibeacon != peripheral.rssi){
-			rssi_ibeacon = peripheral.rssi;
-			console.log({"uuid": peripheral.uuid, "rssi": peripheral.rssi });
-		}
+		console.log({"uuid": peripheral.uuid, "rssi": peripheral.rssi });
 	});
  
 	setInterval(function(){
-  		peripheral.updateRssi();
+  		// peripheral.updateRssi();
+  		console.log('sss');
 	}, 100);
 });
