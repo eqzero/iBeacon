@@ -23,6 +23,7 @@ noble.on('discover', function(peripheral) {
   // console.log('rssi: '+peripheral.rssi);
 
   console.log(peripheral.advertisement.serviceData);
+  console.log(peripheral.advertisement.txPowerLevel);
 
   // setInterval(function(){
 
