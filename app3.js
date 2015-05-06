@@ -57,7 +57,11 @@ noble.on('discover', function(peripheral) {
 
       // console.log("serviceData.readInt8(6): "+serviceData.readInt8(6),"txPower: "+txPower);
       console.log("localName: "+peripheral.advertisement.localName,"readInt8: "+serviceData[0].data.readInt8(6),"txPower: "+txPower);
-      console.log( serviceData[0].data.readInt8(16) * 16 * 0.976,serviceData[0].data.readInt8(17) * 16 * 0.976,serviceData[0].data.readInt8(18) * 16 * 0.976);    
+    
+      if(manufacturerData.length >= 18){
+        console.log( manufacturerData.readInt8(16) * 16 * 0.976,manufacturerData.readInt8(17) * 16 * 0.976,manufacturerData.readInt8(18) * 16 * 0.976);    
+      }
+
     }
   }, 2000);
 
