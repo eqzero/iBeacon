@@ -52,7 +52,8 @@ noble.on('discover', function(peripheral) {
 
     // console.log("address: "+peripheral.address,"txPower: "+txPower,"rssi: "+peripheral.rssi,"rssi_new: "+rssi_new);
 
-    console.log("serviceData.readInt8(6): "+serviceData.readInt8(6),"txPower: "+txPower);
+    // console.log("serviceData.readInt8(6): "+serviceData.readInt8(6),"txPower: "+txPower);
+    console.log(serviceData);
   }, 2000);
 
 
