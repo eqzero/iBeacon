@@ -49,6 +49,9 @@ noble.on('discover', function(peripheral) {
 
     if(serviceData.length > 0){
 
+
+      console.log(peripheral.address);
+
       var manufacturerData = peripheral.advertisement.manufacturerData.toString('hex');
       var txPower = parseInt(manufacturerData.substring(manufacturerData.length-2), 16)-256;
       // var rssi_new = calculateDistance(txPower,peripheral.rssi);
@@ -64,6 +67,8 @@ noble.on('discover', function(peripheral) {
 
         console.log( manufacturerData2.readInt8(16) * 16 * 0.976,manufacturerData2.readInt8(17) * 16 * 0.976,manufacturerData2.readInt8(18) * 16 * 0.976);    
       }
+
+      console.log("===============================>");      
 
     }
   }, 2000);
