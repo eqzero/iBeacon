@@ -48,7 +48,7 @@ noble.on('discover', function(peripheral) {
     var manufacturerLast2 = manufacturerData[manufacturerData-2]+manufacturerData[manufacturerData-1];
     var rssi_new = calculateDistance(parseInt(manufacturerLast2, 16),peripheral.rssi);
 
-    console.log("address: "+peripheral.address,"rssi: "+peripheral.rssi,"rssi_new: "+rssi_new);
+    console.log("address: "+peripheral.address,"Last 2:"+manufacturerLast2,"rssi: "+peripheral.rssi,"rssi_new: "+rssi_new);
 
   }, 2000);
 
