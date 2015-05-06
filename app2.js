@@ -20,7 +20,8 @@ noble.on('discover', function(peripheral) {
 	}); 
  
 	peripheral.on('rssiUpdate',function(rssi){
-		console.log({"uuid": peripheral.uuid, "rssi": peripheral.rssi });
+		console.log('rssiUpdate');
+		// console.log({"uuid": peripheral.uuid, "rssi": peripheral.rssi });
 	});
  
 	setInterval(function(){
