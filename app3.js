@@ -33,6 +33,5 @@ noble.on('discover', function(peripheral) {
     console.log('\tmy TX power level is:');
     console.log('\t\t' + peripheral.advertisement.txPowerLevel);
   }
-
   console.log('<-------------->');
 });
