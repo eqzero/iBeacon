@@ -44,9 +44,11 @@ noble.on('discover', function(peripheral) {
 
   setInterval(function(){
 
-    var rssi_new = calculateDistance(peripheral.rssi);
+    var manufacturerData = peripheral.advertisement.manufacturerData;
+    var manufacturerLast2 = manufacturerData[manufacturerData-2]+manufacturerData[manufacturerData-1];
+    var rssi_new = calculateDistance(parseInt(manufacturerLast2, 16),peripheral.rssi);
 
-    console.log("address: "+peripheral.address,"rssi: "+peripheral.rssi/175,"rssi_new: "+rssi_new);
+    console.log("address: "+peripheral.address,"rssi: "+peripheral.rssi,"rssi_new: "+rssi_new);
 
   }, 2000);
 
@@ -57,11 +59,11 @@ noble.on('discover', function(peripheral) {
   console.log('<-------------->');
 });
 
-function calculateDistance(rssi) {
+function calculateDistance(txPower,rssi) {
   
-  var txPower = 175 //hard coded power value. Usually ranges between -59 to -65
+  // var txPower = 175 //hard coded power value. Usually ranges between -59 to -65
   
-  if (rssi == 0) {
+  if (rssi == 0) 
     return -1.0; 
   }
  
