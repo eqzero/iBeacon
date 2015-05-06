@@ -23,11 +23,10 @@ noble.on('discover', function(peripheral) {
   // console.log('rssi: '+peripheral.rssi);
 
   setInterval(function(){
-     
 
     var rssi_new = calculateDistance(peripheral.rssi);
 
-    console.log("localName: "+peripheral.advertisement.localName,"uuid: "+peripheral.uuid,"rssi: "+peripheral.rssi,"rssi_new: "+rssi_new);
+    console.log("address: "+peripheral.address,"uuid: "+peripheral.uuid,"rssi: "+peripheral.rssi,"rssi_new: "+rssi_new);
 
   }, 2000);
   /*
