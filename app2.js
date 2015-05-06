@@ -2,10 +2,13 @@ var noble = require('noble');
 var rssi_ibeacon = '';
 
 noble.on('stateChange', function(state) {
+	console.log("state = "+state);
 	if (state === 'poweredOn' ) {
 		noble.startScanning([], false);
+		console.log('state1');
 	} else {
 		noble.stopScanning();
+		console.log('state2');
 	}
 });
  
