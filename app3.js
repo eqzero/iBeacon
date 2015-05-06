@@ -46,7 +46,7 @@ noble.on('discover', function(peripheral) {
 
     var rssi_new = calculateDistance(peripheral.rssi);
 
-    console.log("address: "+peripheral.address,"rssi: "+peripheral.rssi,"rssi_new: "+rssi_new);
+    console.log("address: "+peripheral.address,"rssi: "+peripheral.rssi/175,"rssi_new: "+rssi_new);
 
   }, 2000);
 
