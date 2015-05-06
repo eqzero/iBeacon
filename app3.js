@@ -56,13 +56,13 @@ noble.on('discover', function(peripheral) {
       // console.log("address: "+peripheral.address,"txPower: "+txPower,"rssi: "+peripheral.rssi,"rssi_new: "+rssi_new);
 
       // console.log("serviceData.readInt8(6): "+serviceData.readInt8(6),"txPower: "+txPower);
-      console.log(serviceData[0].data.readInt8(6),txPower);
+      console.log("localName: "+peripheral.advertisement.localName,"readInt8: "+serviceData[0].data.readInt8(6),"txPower: ":txPower);
     }
   }, 2000);
 
 
-  console.log(peripheral.advertisement.manufacturerData);
-  console.log(JSON.stringify(peripheral.advertisement.manufacturerData.toString('hex')));
+  // console.log(peripheral.advertisement.manufacturerData);
+  // console.log(JSON.stringify(peripheral.advertisement.manufacturerData.toString('hex')));
 
   console.log('<-------------->');
 
