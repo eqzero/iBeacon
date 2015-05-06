@@ -12,12 +12,16 @@ noble.on('stateChange', function(state) {
 });
 
 noble.on('discover', function(peripheral) {
+  /*
   console.log('peripheral discovered (' + peripheral.uuid + ' with address <' + peripheral.address + '>:');
   console.log('\thello my local name is:');
   console.log('\t\t' + peripheral.advertisement.localName);
   console.log('\tcan I interest you in any of the following advertised services:');
   console.log('\t\t' + JSON.stringify(peripheral.advertisement.serviceUuids));
+  */
 
+  console.log('rssi: '+peripheral.rssi);
+  /*
   var serviceData = peripheral.advertisement.serviceData;
   if (serviceData && serviceData.length) {
     console.log('\there is my service data:');
@@ -33,5 +37,6 @@ noble.on('discover', function(peripheral) {
     console.log('\tmy TX power level is:');
     console.log('\t\t' + peripheral.advertisement.txPowerLevel);
   }
+  */
   console.log('<-------------->');
 });
