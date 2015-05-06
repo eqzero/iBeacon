@@ -27,7 +27,7 @@ noble.on('discover', function(peripheral) {
 
     var rssi_new = calculateDistance(peripheral.rssi);
 
-    console.log(peripheral.rssi,rssi_new);
+    console.log("localName: "+peripheral.advertisement.localName,"uuid: "+peripheral.uuid,"rssi: "+peripheral.rssi,"rssi_new: "+rssi_new);
 
   }, 2000);
   /*
