@@ -45,10 +45,10 @@ noble.on('discover', function(peripheral) {
   setInterval(function(){
 
     var manufacturerData = peripheral.advertisement.manufacturerData.toString('hex');
+    var txPower = parseInt(manufacturerData.substring(manufacturerData.length-2), 16)-256;
+    var rssi_new = calculateDistance(txPower,peripheral.rssi);
 
-    var rssi_new = calculateDistance(parseInt(manufacturerData.substring(manufacturerData.length-2), 16)-256,peripheral.rssi);
-
-    console.log("address: "+peripheral.address,"Last 2: "+manufacturerData.substring(manufacturerData.length-2),"rssi: "+peripheral.rssi,"rssi_new: "+rssi_new);
+    console.log("address: "+peripheral.address,"txPower: "+txPower,"rssi: "+peripheral.rssi,"rssi_new: "+rssi_new);
 
   }, 2000);
 
