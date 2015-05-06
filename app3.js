@@ -22,13 +22,15 @@ noble.on('discover', function(peripheral) {
 
   // console.log('rssi: '+peripheral.rssi);
 
-  setInterval(function(){
+  console.log(JSON.stringify(peripheral));
 
-    var rssi_new = calculateDistance(peripheral.advertisement.txPowerLevel,peripheral.rssi);
+  // setInterval(function(){
 
-    console.log("address: "+peripheral.address,"txPowerLevel: "+peripheral.advertisement.txPowerLevel,"rssi: "+peripheral.rssi,"rssi_new: "+rssi_new);
+  //   var rssi_new = calculateDistance(peripheral.advertisement.txPowerLevel,peripheral.rssi);
 
-  }, 2000);
+  //   console.log("address: "+peripheral.address,"txPowerLevel: "+peripheral.advertisement.txPowerLevel,"rssi: "+peripheral.rssi,"rssi_new: "+rssi_new);
+
+  // }, 2000);
   /*
   var serviceData = peripheral.advertisement.serviceData;
   if (serviceData && serviceData.length) {
