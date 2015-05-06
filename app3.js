@@ -18,21 +18,7 @@ noble.on('discover', function(peripheral) {
   console.log('\t\t' + peripheral.advertisement.localName);
   console.log('\tcan I interest you in any of the following advertised services:');
   console.log('\t\t' + JSON.stringify(peripheral.advertisement.serviceUuids));
-  */
 
-  // console.log('rssi: '+peripheral.rssi);
-
-  console.log(peripheral.advertisement.serviceData);
-  console.log(peripheral.advertisement.txPowerLevel);
-
-  // setInterval(function(){
-
-  //   var rssi_new = calculateDistance(peripheral.advertisement.txPowerLevel,peripheral.rssi);
-
-  //   console.log("address: "+peripheral.address,"txPowerLevel: "+peripheral.advertisement.txPowerLevel,"rssi: "+peripheral.rssi,"rssi_new: "+rssi_new);
-
-  // }, 2000);
-  /*
   var serviceData = peripheral.advertisement.serviceData;
   if (serviceData && serviceData.length) {
     console.log('\there is my service data:');
@@ -49,6 +35,25 @@ noble.on('discover', function(peripheral) {
     console.log('\t\t' + peripheral.advertisement.txPowerLevel);
   }
   */
+
+
+    // console.log('rssi: '+peripheral.rssi);
+
+  // console.log(peripheral.advertisement.serviceData);
+  // console.log(peripheral.advertisement.txPowerLevel);
+
+  // setInterval(function(){
+
+  //   var rssi_new = calculateDistance(peripheral.advertisement.txPowerLevel,peripheral.rssi);
+
+  //   console.log("address: "+peripheral.address,"txPowerLevel: "+peripheral.advertisement.txPowerLevel,"rssi: "+peripheral.rssi,"rssi_new: "+rssi_new);
+
+  // }, 2000);
+
+
+  console.log(peripheral.advertisement.manufacturerData);
+  console.log(JSON.stringify(peripheral.advertisement.manufacturerData.toString('hex')));
+
   console.log('<-------------->');
 });
 
