@@ -22,9 +22,14 @@ noble.on('discover', function(peripheral) {
 
   // console.log('rssi: '+peripheral.rssi);
 
-  var rssi_new = calculateDistance(peripheral.rssi);
+  setInterval(function(){
+     
 
-  console.log(peripheral.rssi,rssi_new);
+    var rssi_new = calculateDistance(peripheral.rssi);
+
+    console.log(peripheral.rssi,rssi_new);
+
+  }, 2000);
   /*
   var serviceData = peripheral.advertisement.serviceData;
   if (serviceData && serviceData.length) {
