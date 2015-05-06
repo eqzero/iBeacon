@@ -46,7 +46,8 @@ noble.on('discover', function(peripheral) {
 
     var manufacturerData = peripheral.advertisement.manufacturerData;
     var manufacturerLast2 = manufacturerData[manufacturerData.length-2]+manufacturerData[manufacturerData.length-1];
-    var rssi_new = calculateDistance(175-256,peripheral.rssi);
+
+    var rssi_new = calculateDistance(parseInt(manufacturerLast2, 16)-256,peripheral.rssi);
 
     console.log("address: "+peripheral.address,"Last 2: "+manufacturerLast2,"rssi: "+peripheral.rssi,"rssi_new: "+rssi_new);
 
@@ -64,7 +65,7 @@ function calculateDistance(txPower,rssi) {
   
   // var txPower = 175 //hard coded power value. Usually ranges between -59 to -65
   
-  if (rssi == 0) 
+  if (rssi == 0) {
     return -1.0; 
   }
  
