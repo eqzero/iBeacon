@@ -24,9 +24,9 @@ noble.on('discover', function(peripheral) {
 
   setInterval(function(){
 
-    var rssi_new = getRange(peripheral.rssi);
+    var rssi_new = calculateDistance(peripheral.advertisement.txPowerLevel,peripheral.rssi);
 
-    console.log("address: "+peripheral.address,"uuid: "+peripheral.uuid,"rssi: "+peripheral.rssi,"rssi_new: "+rssi_new);
+    console.log("address: "+peripheral.address,"txPowerLevel: "+peripheral.advertisement.txPowerLevel,"rssi: "+peripheral.rssi,"rssi_new: "+rssi_new);
 
   }, 2000);
   /*
@@ -49,9 +49,9 @@ noble.on('discover', function(peripheral) {
   console.log('<-------------->');
 });
 
-function calculateDistance(rssi) {
+function calculateDistance(txPower,rssi) {
   
-  var txPower = -59 //hard coded power value. Usually ranges between -59 to -65
+  // var txPower = -59 //hard coded power value. Usually ranges between -59 to -65
   
   if (rssi == 0) {
     return -1.0; 
@@ -66,12 +66,3 @@ function calculateDistance(rssi) {
     return distance;
   }
 } 
-
-function getRange(rssi) {
-    var txCalibratedPower = -59;
-    var ratio_db = txCalibratedPower - rssi;
-    var ratio_linear = Math.pow(10, ratio_db / 10);
-
-    var r = Math.sqrt(ratio_linear);
-    return r;
-}
