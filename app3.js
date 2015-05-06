@@ -42,7 +42,7 @@ noble.on('discover', function(peripheral) {
   // console.log(peripheral.advertisement.serviceData);
   // console.log(peripheral.advertisement.txPowerLevel);
 
-  setInterval(function(){
+  // setInterval(function(){
 
     var manufacturerData = peripheral.advertisement.manufacturerData;
     var manufacturerLast2 = manufacturerData[manufacturerData.length-2]+manufacturerData[manufacturerData.length-1];
@@ -51,11 +51,11 @@ noble.on('discover', function(peripheral) {
 
     console.log("address: "+peripheral.address,"Last 2: "+manufacturerLast2,"rssi: "+peripheral.rssi,"rssi_new: "+rssi_new);
 
-  }, 2000);
+  // }, 2000);
 
 
-  // console.log(peripheral.advertisement.manufacturerData);
-  // console.log(JSON.stringify(peripheral.advertisement.manufacturerData.toString('hex')));
+  console.log(peripheral.advertisement.manufacturerData);
+  console.log(JSON.stringify(peripheral.advertisement.manufacturerData.toString('hex')));
 
   console.log('<-------------->');
 
