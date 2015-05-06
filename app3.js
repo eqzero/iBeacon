@@ -42,15 +42,15 @@ noble.on('discover', function(peripheral) {
   // console.log(peripheral.advertisement.serviceData);
   // console.log(peripheral.advertisement.txPowerLevel);
 
-  // setInterval(function(){
+  setInterval(function(){
 
     var manufacturerData = peripheral.advertisement.manufacturerData;
-    var manufacturerLast2 = manufacturerData[manufacturerData-2]+manufacturerData[manufacturerData-1];
+    var manufacturerLast2 = manufacturerData[manufacturerData.length-2]+manufacturerData[manufacturerData.length-1];
     var rssi_new = calculateDistance(parseInt(manufacturerLast2, 16)-256,peripheral.rssi);
 
     console.log("address: "+peripheral.address,"Last 2: "+manufacturerLast2,"rssi: "+peripheral.rssi,"rssi_new: "+rssi_new);
 
-  // }, 2000);
+  }, 2000);
 
 
   // console.log(peripheral.advertisement.manufacturerData);
