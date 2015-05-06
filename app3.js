@@ -24,7 +24,7 @@ noble.on('discover', function(peripheral) {
 
   setInterval(function(){
 
-    var rssi_new = calculateDistance(peripheral.rssi);
+    var rssi_new = getRange(peripheral.rssi);
 
     console.log("address: "+peripheral.address,"uuid: "+peripheral.uuid,"rssi: "+peripheral.rssi,"rssi_new: "+rssi_new);
 
@@ -66,3 +66,12 @@ function calculateDistance(rssi) {
     return distance;
   }
 } 
+
+function getRange(rssi) {
+    var txCalibratedPower = -59;
+    var ratio_db = txCalibratedPower - rssi;
+    var ratio_linear = Math.pow(10, ratio_db / 10);
+
+    var r = Math.sqrt(ratio_linear);
+    return r;
+}
