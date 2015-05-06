@@ -24,7 +24,7 @@ noble.on('discover', function(peripheral) {
 
   var rssi_new = calculateDistance(peripheral.rssi);
 
-  console.log(rssi_new);
+  console.log(peripheral.rssi,rssi_new);
   /*
   var serviceData = peripheral.advertisement.serviceData;
   if (serviceData && serviceData.length) {
