@@ -44,7 +44,7 @@ noble.on('discover', function(peripheral) {
 
   // setInterval(function(){
 
-    var manufacturerData = peripheral.advertisement.manufacturerData;
+    var manufacturerData = peripheral.advertisement.manufacturerData.toString('hex');
 
     var rssi_new = calculateDistance(parseInt(manufacturerData.substring(manufacturerData.length-2), 16)-256,peripheral.rssi);
 
